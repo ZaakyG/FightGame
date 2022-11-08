@@ -22,9 +22,9 @@ class Character():
         self.earn_energy(1)
         return self.strength
     
-    def defend(self, attack):
+    def defend(self, attack_in):
         self.earn_energy(2)
-        total_attack = self.shield - attack
+        total_attack = self.shield - attack_in
         self.health += total_attack
     
     def consume_energy(self, points, skill):
