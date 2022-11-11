@@ -4,6 +4,10 @@ Player will have several characters to play with, so the battles
 are a player with 3 characters against a player with other 3 characters
 or some kind of boss
 '''
+'''
+TODOS write a class that inhabilitates dead chacters
+'''
+
 import character
 
 class Player():
@@ -15,6 +19,7 @@ class Player():
         self.c2 = character.Character(cname2, num2)
         self.c3 = character.Character(cname3, num3)
         self.total_energy = self.c1.energy + self.c2.energy + self.c3.energy
+        self.total_health = self.c1.health + self.c2.health + self.c3.health
 
     def consume_energy(self, points, skill, cha):
         if cha == 1:
@@ -56,8 +61,14 @@ class Player():
 
     def defend(self, character, points):
         if character == 1:
+            self.update_total_health()
             return self.c1.defend(points)
         elif character == 2:
+            self.update_total_health()
             return self.c2.defend(points)
         elif character == 3:
+            self.update_total_health()
             return self.c3.defend(points)
+
+    def update_total_health(self):
+        self.total_health = self.c1.health + self.c2.health + self.c3.health
