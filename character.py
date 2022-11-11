@@ -4,6 +4,7 @@ Here, things such as player definition, hp, shield... and so on
 are defined so that a player may have the desired characteristics he wants
 as well as a worthy opponent.
 '''
+
 class Character():
     '''
     Character class where properties such as
@@ -11,12 +12,14 @@ class Character():
     Also, methods to attack, decrease health when 
     attacked, and also gain energy
     '''
-    def __init__(self, name):
+    def __init__(self, name, num):
         self.name = name
+        self.num = num
         self.health = 200
         self.strength = 25     
         self.shield = 10 
-        self.energy = 0       
+        self.energy = 50       
+        
         
     def attack(self):
         self.earn_energy(1)
@@ -28,12 +31,21 @@ class Character():
         self.health += total_attack
     
     def consume_energy(self, points, skill):
-        if skill == "health":
+        if skill == 1:
             self.health += points * 1.5
-        elif skill == "strength":
+            self.energy += (-points)
+            return self.health
+        elif skill == 2:
             self.strength += points
-        elif skill == "shield":
+            self.energy += (-points)
+            return self.strength
+        elif skill == 3:
             self.shield += points
+            self.energy += (-points)
+            return self.shield
+        else:
+            print("Not a valid option.")
+            return 0
 
     def earn_energy(self, action):
         if action == 1: # means attack
