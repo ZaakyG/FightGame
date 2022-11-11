@@ -13,6 +13,9 @@ class Game():
         self.Boss = character.Character("The Beast", 1)
 
         # Set up Boss 
+        self.Boss.health = 500
+        self.Boss.attack = 50
+        self.Boss.shield = 15
 
 
     def main_game(self):
@@ -41,7 +44,7 @@ class Game():
 
     def battle(self):
         print("--------------- Battle begins ------------")
-        while True:
+        while self.player1.total_energy > 0 and self.Boss.health > 0:
             num = input("Enter the character you want to use: ")
             att = self.player1.select_attack(int(num))
             self.Boss.defend(att)
@@ -56,7 +59,12 @@ class Game():
             self.player1.defend(boss_select_character, boss_attc)
             self.player1.habilities_status()
 
+        if self.player1.total_energy > 0:
+            print(self.player1.name, "wins!!")
+        if self.Boss.health > 0:
+            print("Boss wins")
+
 
 gam = Game("Isaac", "Sword", "Archer", "Horse")
-# gam.pre_battle()
+gam.pre_battle()
 gam.battle()
