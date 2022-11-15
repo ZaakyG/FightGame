@@ -72,3 +72,17 @@ class Player():
 
     def update_total_health(self):
         self.total_health = self.c1.health + self.c2.health + self.c3.health
+
+    def select_alive(self, character):
+        if character == 1:
+            return self.c1.character_dead()
+        elif character == 2:
+            return self.c2.character_dead()
+        elif character == 3:
+            return self.c3.character_dead()
+
+
+'''
+For console testing:
+pl = player.Player()
+'''
