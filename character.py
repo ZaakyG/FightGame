@@ -44,7 +44,7 @@ class Character():
             self.energy += (-points)
             return self.shield
         else:
-            print("Not a valid option.")
+            print("Not a valid optison.")
             return 0
 
     def earn_energy(self, action):
@@ -53,3 +53,13 @@ class Character():
         elif action == 2: # means defend
             self.energy += 10
 
+    def character_dead(self):
+        '''
+        A character method that makes the character dead
+        that should mean that the character is not 
+        able to interact anymore
+        '''
+        if self.health <= 0:
+            return True
+        else:
+            return False
