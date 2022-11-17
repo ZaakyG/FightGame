@@ -1,4 +1,5 @@
 '''
+By Isaac Gonzalez 11-16-2022
 This is the character class for the video game
 Here, things such as player definition, hp, shield... and so on
 are defined so that a player may have the desired characteristics he wants
