@@ -1,3 +1,7 @@
+'''
+By Isaac Gonzalez 11-16-2022
+'''
+
 import player
 import character
 import random
@@ -6,7 +10,7 @@ import random
 TODO
 Fix bugs like:
 - DONE: When a character is dead it should not be able to interact anymore 
-- Every 3 turns the player can decide how to spend character energy
+- DONE: Every 3 turns the player can decide how to spend character energy
 - A play again button must be implemented
 '''
 
