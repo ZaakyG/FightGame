@@ -1,4 +1,5 @@
 '''
+By Isaac Gonzalez 11-16-2022
 Player class.
 Player will have several characters to play with, so the battles
 are a player with 3 characters against a player with other 3 characters
